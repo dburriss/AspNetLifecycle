@@ -1,8 +1,8 @@
 ﻿{
-  "version": "1.0.0-rc1-final",
+  "version": "1.0.0-rc1-update1",
   "description": "The Lifecycle library contains interfaces and helpers for wiring and running commands to execute during a web request lifecycle.",
   "authors": [ "Devon Burriss" ],
-  "tags": [ "owin lifecycle mvc6 aspnet5 request response commands" ],
+  "tags": [ "owin lifecycle mvc aspnet core request response commands" ],
   "projectUrl": "http://devonburriss.me/lifecycle",
   "licenseUrl": "",
   "frameworks": {
@@ -15,7 +15,8 @@
         "System.Threading": "4.0.11-beta-23516"
       }
     },
-    "dnx452": {
+
+    "net451": {
       "dependencies": {
 
       }
