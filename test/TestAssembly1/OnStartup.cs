@@ -1,6 +1,6 @@
 ﻿namespace TestAssembly1
 {
-    public class BeforeRequest1 : Lifecycle.IRunOnEachRequest
+    public class OnStartup : Lifecycle.IRunAtStartup
     {
         public void Execute()
         {

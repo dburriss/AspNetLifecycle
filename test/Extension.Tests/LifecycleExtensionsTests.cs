@@ -1,34 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Lifecycle.AspNet;
 using Microsoft.Extensions.DependencyInjection;
 using TestAssembly1;
+using Xunit;
 
 namespace Extension.Tests
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
     public class LifecycleExtensionsTests
     {
-        public void AddLifecycleCommands_On()
+        [Fact]
+        public void AddLifecycleCommands_OnAssemblyWithLifecycleContracts_RegistersCommands()
         {
+            var assemblies = GetAssemblies();
             IServiceCollection services = new ServiceCollection();
+            services.AddLifecycleCommands(assemblies);
+
+            Assert.NotEmpty(services);
+            Assert.Equal(2, services.Count);
+        }
+
+        [Fact(Skip = "need mocking")]
+        public void UseLifecycleCommands_OnAssemblyWithLifecycleContracts_ExecutesStartupCommand()
+        {
+            //var assemblies = GetAssemblies();
+            //IServiceCollection services = new ServiceCollection();
+            //services.AddLifecycleCommands(assemblies);
+
+            //IApplicationBuilder app = JustMock
+
+            //Assert.NotEmpty(services);
+            //Assert.Equal(2, services.Count);
+            
         }
 
         private System.Reflection.Assembly[] GetAssemblies()
         {
-#if NET451
             return new System.Reflection.Assembly[] { typeof(BeforeRequest1).Assembly };
-#endif
-
-#if DNXCORE50
-            return new System.Reflection.Assembly[] { typeof(BeforeRequest1).GetTypeInfo().Assembly };
-#endif
-
-#if DOTNET5_4
-            return null;
-#endif
         }
     }
 }

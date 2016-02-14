@@ -4,7 +4,7 @@ using Microsoft.AspNet.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lifecycle.OWIN
+namespace Lifecycle.AspNet
 {
     public class LifecycleMiddleware
     {
@@ -68,7 +68,6 @@ namespace Lifecycle.OWIN
             {
                 cmd.Execute();
             }
-
         }
 
         private async Task RunWhenReponseCompletes(object serviceProviderObject)
