@@ -11,89 +11,95 @@ Install with the following nuget command:
 
 Implement at least one of the `IRun` *interfaces*.
 
-    public class TestRequestStartTask : IRunOnEachRequest
+```csharp
+public class TestRequestStartTask : IRunOnEachRequest
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("Request Start: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("Request Start: " + DateTime.UtcNow);
     }
+}
+```
 
 In your Startup.cs file wire up the inplementing classes into the DI container using the `AddLifecycleCommands` extension method.
 
-    public void ConfigureServices(IServiceCollection services)
-    {
-        var assembliesToInspect = GetAssemblies();//implement GetAssemblies to return assemblies you want to scan for interfaces
-        services.AddLifecycleCommands(assembliesToInspect);
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    var assembliesToInspect = GetAssemblies();//implement GetAssemblies to return assemblies you want to scan for interfaces
+    services.AddLifecycleCommands(assembliesToInspect);
 
-        services.AddMvc();
-    }
-    
+    services.AddMvc();
+}
+```
+
 Then in the app configuration tell the app to use the **Lifecycle** middleware using the `UseLifecycleCommands` extension method.
 
-    public void Configure(IApplicationBuilder app)
-    {
-        app.UseLifecycleCommands();
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    app.UseLifecycleCommands();
 
-        app.UseMvc()
-    }
-    
+    app.UseMvc()
+}
+```
+
 # Available interfaces
 
-
-    public class AppInitTask : IRunAtInit
+```csharp
+public class AppInitTask : IRunAtInit
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("App Init: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("App Init: " + DateTime.UtcNow);
     }
+}
 
-    public class AppStartTask : IRunAtStartup
+public class AppStartTask : IRunAtStartup
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("App Start: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("App Start: " + DateTime.UtcNow);
     }
+}
 
-    public class ErrorTask : IRunOnError
+public class ErrorTask : IRunOnError
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("Error: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("Error: " + DateTime.UtcNow);
     }
+}
 
-    public class TestRequestStartTask : IRunOnEachRequest
+public class TestRequestStartTask : IRunOnEachRequest
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("Request Start: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("Request Start: " + DateTime.UtcNow);
     }
+}
 
-    public class TestRequestEndTask : IRunAfterEachRequest
+public class TestRequestEndTask : IRunAfterEachRequest
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("Request End: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("Request End: " + DateTime.UtcNow);
     }
+}
 
-    public class TestResponseStartTask : IRunOnEachResponse
+public class TestResponseStartTask : IRunOnEachResponse
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("Response Start: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("Response Start: " + DateTime.UtcNow);
     }
+}
 
-    public class TestResponseEndTask : IRunAfterEachResponse
+public class TestResponseEndTask : IRunAfterEachResponse
+{
+    public void Execute()
     {
-        public void Execute()
-        {
-            System.Diagnostics.Debug.WriteLine("Response End: " + DateTime.UtcNow);
-        }
+        System.Diagnostics.Debug.WriteLine("Response End: " + DateTime.UtcNow);
     }
-
+}
+```
