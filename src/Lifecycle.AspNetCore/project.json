@@ -1,0 +1,26 @@
+﻿{
+  "version": "1.0.0",
+  "description": "The Lifecycle library contains interfaces and helpers for wiring and running commands to execute during a web request lifecycle.",
+  "authors": [ "Devon Burriss" ],
+
+  "packOptions": {
+    "tags": [ "owin lifecycle mvc aspnet core request response commands" ],
+    "projectUrl": "http://devonburriss.me/lifecycle",
+    "licenseUrl": "https://github.com/dburriss/AspNetLifecycle/blob/master/LICENSE"
+  },
+  
+  "frameworks": {
+    "net451": {},
+    "netstandard1.6": {
+      "imports": "dotnet5.4",
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516"
+      }
+    }
+  },
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+    "Microsoft.AspNetCore.Http.Abstractions": "1.0.0"
+  }
+}
