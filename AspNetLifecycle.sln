@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Lifecycle.AspNetCore", "src\Lifecycle.AspNetCore\Lifecycle.AspNetCore.xproj", "{E72333E2-E617-40A8-B867-4FF88959BF60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{4DDE0D9B-ABDE-4DBD-8A17-2AD39477AB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DDE0D9B-ABDE-4DBD-8A17-2AD39477AB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DDE0D9B-ABDE-4DBD-8A17-2AD39477AB64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E72333E2-E617-40A8-B867-4FF88959BF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E72333E2-E617-40A8-B867-4FF88959BF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E72333E2-E617-40A8-B867-4FF88959BF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E72333E2-E617-40A8-B867-4FF88959BF60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BE3A5C83-40F7-4A5D-ADB3-192D2337A7C4} = {C5596053-FE19-4714-B9E5-AB8BE173C94D}
 		{4DDE0D9B-ABDE-4DBD-8A17-2AD39477AB64} = {C5596053-FE19-4714-B9E5-AB8BE173C94D}
+		{E72333E2-E617-40A8-B867-4FF88959BF60} = {579B2D80-CF9B-477B-88E3-9982CB0FEC8D}
 	EndGlobalSection
 EndGlobal
