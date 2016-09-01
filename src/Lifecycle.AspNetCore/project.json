@@ -14,13 +14,13 @@
     "netstandard1.6": {
       "imports": "dotnet5.4",
       "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516"
+        "Microsoft.CSharp": "4.0.1"
       }
     }
   },
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
     "Microsoft.AspNetCore.Http.Abstractions": "1.0.0"
   }
 }

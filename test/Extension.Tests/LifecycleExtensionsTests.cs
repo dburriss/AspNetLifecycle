@@ -1,7 +1,7 @@
-﻿using Lifecycle.AspNet;
+﻿using Lifecycle.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using TestAssembly1;
 using Xunit;
+using TestAssembly1;
 
 namespace Extension.Tests
 {
