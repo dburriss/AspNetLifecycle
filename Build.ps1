@@ -1,3 +1,6 @@
+$nugetProjects = @(".\src\Lifecycle.AspNetCore")
+$testProjects = @(".\test\Extension.Tests")
+
 function EnsurePsbuildInstalled{  
     [cmdletbinding()]
     param(
@@ -36,13 +39,21 @@ if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
 
 EnsurePsbuildInstalled
 
-exec { & dotnet restore }
+Exec { & dotnet restore }
 
 Invoke-MSBuild
 
 $revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 $revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
 
-exec { & dotnet test .\test\Extension.Tests -c Release }
+foreach ($testProjectPath in $testProjects) {
+    "=== RUNNING TESTS FOR " + $testProjectPath + " ==="
+    Exec { & dotnet test $testProjectPath -c Release }
+    "================================================="
+}
 
-exec { & dotnet pack .\src\Lifecycle.AspNetCore -c Release -o .\artifacts --version-suffix=$revision } 
+foreach ($projectPath in $nugetProjects) {
+    "=== BUILDING FOR " + $projectPath + " ==="
+    Exec { & dotnet pack $projectPath -c Release -o .\artifacts --version-suffix=$revision } 
+    "================================================="
+}
