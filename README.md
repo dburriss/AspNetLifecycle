@@ -1,13 +1,20 @@
-> Rename to Lifecycle.AspNetCore for RC 2
+# AspNet Core Lifecycle
 
-# AspNet Lifecycle
+| | |
+|-|-|
+|   CI  |[![Build status](https://ci.appveyor.com/api/projects/status/05drr0dq7omoru07?svg=true)](https://ci.appveyor.com/project/dburriss/aspnetlifecycle)
+| MASTER |[![Master Build status](https://ci.appveyor.com/api/projects/status/pmgou6qm452s50d0/branch/master?svg=true)](https://ci.appveyor.com/project/dburriss/aspnetlifecycle/branch/master)
+|BLEEDING|[![MyGet CI](https://img.shields.io/myget/dburriss-ci/vpre/Lifecycle.AspNetCore.svg)](http://myget.org/gallery/dburriss-ci)
+|  NUGET |[![NuGet CI](https://img.shields.io/nuget/v/Lifecycle.AspNetCore.svg)](https://www.nuget.org/packages/Lifecycle.AspNetCore/)|
+
 I help execute custom commands at key interception points within the OWIN request lifecycle. As an example you can trigger code to fire before a request or after a response by implementing a a particular interface.
 
 Based on code [presented on Pluralsight](https://www.pluralsight.com/courses/build-application-framework-aspdotnet-mvc-5) by [@matthoneycutt](https://twitter.com/matthoneycutt). He blogs at http://trycatchfail.com/blog.
+
 ## Usage
 
 Install with the following nuget command:
-> `Install-Package Lifecycle.AspNet -Pre`
+> `Install-Package Lifecycle.AspNetCore
 
 Implement at least one of the `IRun` *interfaces*.
 
@@ -44,7 +51,7 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-# Available interfaces
+## Available interfaces
 
 ```csharp
 public class AppInitTask : IRunAtInit

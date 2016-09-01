@@ -3,13 +3,12 @@
   "description": "Extension.Tests Class Library",
   "authors": [ "Devon" ],
 
+  "testRunner": "xunit",
+
   "frameworks": {
-    "netcoreapp1.0": {
+    "net451": {
       "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.0"
-        }
+        "Microsoft.NETCore.Platforms": "1.0.1"
       }
     }
   },
@@ -20,6 +19,6 @@
     "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "TestAssembly1": "1.0.0",
-    "Lifecycle.AspNetCore": "1.*"
+    "Lifecycle.AspNetCore": "1.0.0"
   }
 }
