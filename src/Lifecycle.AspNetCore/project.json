@@ -1,11 +1,11 @@
 ﻿{
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Lifecycle library contains interfaces and helpers for wiring and running commands to execute during a web request lifecycle.",
   "authors": [ "Devon Burriss" ],
 
   "packOptions": {
     "tags": [ "owin lifecycle mvc aspnet core request response commands" ],
-    "projectUrl": "http://devonburriss.me/lifecycle",
+    "projectUrl": "https://github.com/dburriss/AspNetLifecycle",
     "licenseUrl": "https://github.com/dburriss/AspNetLifecycle/blob/master/LICENSE"
   },
   
