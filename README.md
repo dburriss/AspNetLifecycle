@@ -1,7 +1,7 @@
 # AspNet Core Lifecycle
 
 | | |
-|-|-|
+|---|----|
 |   CI  |[![Build status](https://ci.appveyor.com/api/projects/status/05drr0dq7omoru07?svg=true)](https://ci.appveyor.com/project/dburriss/aspnetlifecycle) |
 | MASTER |[![Master Build status](https://ci.appveyor.com/api/projects/status/pmgou6qm452s50d0/branch/master?svg=true)](https://ci.appveyor.com/project/dburriss/aspnetlifecycle/branch/master) |
 |BLEEDING|[![MyGet CI](https://img.shields.io/myget/dburriss-ci/vpre/Lifecycle.AspNetCore.svg)](http://myget.org/gallery/dburriss-ci) |
