@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0",
+  "version": "1.0.*",
   "description": "The Lifecycle library contains interfaces and helpers for wiring and running commands to execute during a web request lifecycle.",
   "authors": [ "Devon Burriss" ],
 
